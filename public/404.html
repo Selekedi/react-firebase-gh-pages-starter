@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script type="text/javascript">
+      var path = window.location.pathname + window.location.search + window.location.hash;
+      // Get base path from current script
+      var repoName = location.pathname.split('/')[1]; // gets "debtors-ledger-pwa"
+      var redirectUrl = '/' + repoName + '/?redirect=' + encodeURIComponent(path);
+      window.location.replace(redirectUrl);
+    </script>
+  </head>
+  <body></body>
+</html>
+
+
