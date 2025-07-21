@@ -3,13 +3,12 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import "./Header.css";
 import NavItem from "../Navbar/NavItem";
 import { Link } from "react-router-dom";
-import { useAudit } from "../../contexts/AuditContext";
+
 
 const Header = forwardRef((props, ref) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
   const navRef = useRef(null);
-  const {toggleAuditMode, isAuditMode} = useAudit()
   const location = useLocation();
   const navigate = useNavigate();
   const showBackButton = location.pathname !== "/";
@@ -55,7 +54,6 @@ const Header = forwardRef((props, ref) => {
 			{navItems.map(item => (
 			  <NavItem key={item.label} label={item.label} to={item.to} onClick={closeMenu} />
 			))}
-			<button onClick={toggleAuditMode}>🕵️ {isAuditMode ? "Exit" : "Enter"} Audit Mode</button>
 		  </nav>
 
 		  <button className="menu-toggle" onClick={(e) => {
@@ -77,3 +75,4 @@ const Header = forwardRef((props, ref) => {
 });
 
 export default Header;
+

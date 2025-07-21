@@ -7,6 +7,9 @@ import LogIn from "../Login/Login";
 import Home from "../Home/Home";
 import ProtectedRoute from "../../utils/ProtectedRoute";
 import SplashScreen from "../../Components/Loaders/SplashScreen";
+import { onAuthStateChanged } from "firebase/auth";
+import RedirectHandler from "../../utils/RedirectHandler";
+import NotFound from "../NotFound/NotFound";
 
 
 export default function Main(){
@@ -47,7 +50,6 @@ export default function Main(){
 
     return (
         <div>
-            <AuditProvider>
               <Router basename= {process.env.REACT_APP_BASENAME}>
               	<RedirectHandler/>
                 <Header ref={headerRef}/>
@@ -61,7 +63,6 @@ export default function Main(){
                 </Routes>
                 </main>
             </Router>
-          </AuditProvider>  
         </div>
     )
 }
