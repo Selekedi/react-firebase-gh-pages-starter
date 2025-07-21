@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const BASENAME = "/debtors-ledger-pwa"; // Must match your Router basename exactly
+const BASENAME = process.env.REACT_APP_BASENAME // Must match your Router basename exactly
 
 export default function RedirectHandler() {
   const navigate = useNavigate();
