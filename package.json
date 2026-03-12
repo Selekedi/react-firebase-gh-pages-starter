@@ -2,6 +2,7 @@
   "name": "react-firebase-pwa-starter",
   "version": "0.1.0",
   "private": true,
+  "homepage":"https://selekedi.github.io/react-firebase-gh-pages-starter",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
